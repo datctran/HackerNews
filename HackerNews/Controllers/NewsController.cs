@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using HackerNews.Common;
-using HackerNews.Dal;
+﻿using HackerNews.Common;
 using HackerNews.Dto;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace HackerNews.Controllers
 {
@@ -18,7 +14,7 @@ namespace HackerNews.Controllers
 
         public NewsController(IHackerNewsAPI hackerNewsAPI)
         {
-            _hackerNewsAPI = hackerNewsAPI;
+            _hackerNewsAPI = hackerNewsAPI;    
         }
 
         [HttpGet]
