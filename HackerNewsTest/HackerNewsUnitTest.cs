@@ -1,11 +1,13 @@
 using HackerNews.Dal;
 using HackerNews.Dto;
+using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
+
 
 namespace HackerNewsTest
 {
@@ -16,7 +18,8 @@ namespace HackerNewsTest
         public HackerNewsUnitTest()
         {
             _HttpClient = new HttpClient();
-            _hackerNewsAPI = new HackerNewsAPI(_HttpClient);
+           
+            _hackerNewsAPI = new HackerNewsAPI(_HttpClient, new MemoryCache(new MemoryCacheOptions()));
         }
 
         [Fact]
