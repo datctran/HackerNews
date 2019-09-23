@@ -51,10 +51,7 @@
                 const storyIdArray = JSON.parse(e.target.response);
                 storyIdArray.forEach(id => {
                     self.addStory(id);
-                    self.story
                 });
-
-
             }
         };
         let error = function (e) {
