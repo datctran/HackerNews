@@ -1,9 +1,6 @@
 ﻿using HackerNews.Common;
 using HackerNews.Dto;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -35,6 +32,16 @@ namespace HackerNews.Dal
             HttpResponseMessage response = await _client.GetAsync(url);
 
             StoryDto result = await response.Content.ReadAsAsync<StoryDto>();                     
+
+            return result;
+        }
+
+        public async Task<int> GetLastStoryAsync()
+        {
+            string url = $"{_urlBase}/maxitem.json";
+            HttpResponseMessage response = await _client.GetAsync(url);
+
+            int result = await response.Content.ReadAsAsync<int>();
 
             return result;
         }

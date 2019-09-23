@@ -9,5 +9,6 @@ namespace HackerNews.Common
     {
         Task<IEnumerable<int>> GetNewStoriesAsync();
         Task<StoryDto> GetStoryByIdAsync(int id);
+        Task<int> GetLastStoryAsync();
     }
 }
