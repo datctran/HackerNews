@@ -40,7 +40,7 @@
             console.log(e);
         };
 
-        service.request('GET', `https://localhost:44365/api/news/${id}`).then(success, error);
+        service.request('GET', `/api/news/${id}`).then(success, error);
     },
 
     getNewStories: function () {
@@ -62,7 +62,7 @@
             console.log(e);
         };
 
-        service.request('GET', 'https://localhost:44365/api/news').then(success, error);
+        service.request('GET', '/api/news').then(success, error);
     },
 }
 
